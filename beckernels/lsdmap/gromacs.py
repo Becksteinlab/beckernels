@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-"""Required kernel for the run component of LSDmap directed MD. This mostly
+"""Required kernel for the simulation component of LSDmap directed MD. This mostly
 just sets up the environment, then runs `run.py` which generates the script
 that then executes the actual MD run.
 
@@ -76,10 +76,10 @@ def use_build(gmx_version):
 class Kernel(KernelBase):
 
     def _bind_to_resource(self, resource_key):
-        if resource_key not in _KERNEL_INFO["machine_configs"]:
-            raise NoKernelConfigurationError(kernel_name=_KERNEL_INFO["name"], resource_key=resource_key)
+        if resource_key not in self._info["machine_configs"]:
+            raise NoKernelConfigurationError(kernel_name=self._info["name"], resource_key=resource_key)
 
-        cfg = _KERNEL_INFO["machine_configs"][resource_key]
+        cfg = self._info["machine_configs"][resource_key]
 
         arguments = ['run.py',
                      '--mdp',
