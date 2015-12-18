@@ -14,7 +14,7 @@ setup(name='beckernels',
       author='David Dotson',
       author_email='dotsdl@gmail.com',
       packages=['beckernels',
-                'beckernels.lsdmap']
+                'beckernels.dmdmd'],
       scripts=[],
       license='MIT',
       long_description=open('README.md').read(),

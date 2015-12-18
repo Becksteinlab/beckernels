@@ -50,6 +50,7 @@ gmx_versions = {
                 }
             }
         }
+    }
 
 
 def use_build(gmx_version):
