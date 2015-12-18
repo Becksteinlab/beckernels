@@ -29,13 +29,8 @@ _KERNEL_INFO = {
                             "description": "Topology filename"
                         }
                     }
-                }
 
-
-gmx_versions = {
-        '5.1.1':
-        {
-            "machine_configs": 
+    "machine_configs": 
             {
                 "xsede.stampede":
                 {
@@ -52,28 +47,15 @@ gmx_versions = {
         }
 
 
-def use_build(gmx_version):
-    """Select which gromacs version to use, and get back a Kernel with the
-    correct configuration to use it.
-
-    Parameters
-    ----------
-    gmx_version : string
-        string giving the version, e.g. '5.1.1' of gromacs to use
-
-    Returns
-    -------
-    kernel
-        Kernel with the appropriate parameters for the selected gmx version
-
-    """
-    # we need to deal in copies
-    out_schema = dict(_KERNEL_INFO)
-    out_schema.update(dict(gmx_versions[gmx_version]))
-    return Kernel(out_schema)
-    
 
 class Kernel(KernelBase):
+
+    def __init__(self):
+        super(Kernel, self).__init__(_KERNEL_INFO)
+
+    @staticmethod
+    def get_name():
+        return _KERNEL_INFO["name"]
 
     def _bind_to_resource(self, resource_key):
         if resource_key not in self._info["machine_configs"]:

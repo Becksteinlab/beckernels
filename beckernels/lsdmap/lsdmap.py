@@ -47,6 +47,10 @@ class Kernel(KernelBase):
     def __init__(self):
         super(Kernel, self).__init__(_KERNEL_INFO)
 
+    @staticmethod
+    def get_name():
+        return _KERNEL_INFO["name"]
+
     def _bind_to_resource(self, resource_key):
         if resource_key not in self._info["machine_configs"]:
             raise NoKernelConfigurationError(kernel_name=self._info["name"], resource_key=resource_key)

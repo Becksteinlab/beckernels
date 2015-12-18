@@ -45,6 +45,10 @@ class Kernel(KernelBase):
     def __init__(self):
         super(Kernel, self).__init__(_KERNEL_INFO)
 
+    @staticmethod
+    def get_name():
+        return _KERNEL_INFO["name"]
+
     def _bind_to_resource(self, resource_key):
         """(PRIVATE) Implements parent class method.
         """
