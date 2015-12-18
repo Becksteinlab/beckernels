@@ -28,7 +28,7 @@ _KERNEL_INFO = {
                             "mandatory": True,
                             "description": "Topology filename"
                         }
-                    }
+                    },
 
     "machine_configs": 
             {
@@ -45,8 +45,6 @@ _KERNEL_INFO = {
                 }
             }
         }
-    }
-
 
 
 class Kernel(KernelBase):
