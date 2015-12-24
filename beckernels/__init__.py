@@ -8,6 +8,8 @@ from radical.ensemblemd.engine.kernel_registry import kernel_registry
 
 _kernels = ['beckernels.dmdmd.gromacs',
             'beckernels.dmdmd.lsdmap',
+            'beckernels.dmdmd.grompp',
+            'beckernels.dmdmd.mdrun',
             'beckernels.dmdmd.pre_grlsd_loop',
             'beckernels.dmdmd.pre_lsdmap',
             'beckernels.dmdmd.post_lsdmap']
